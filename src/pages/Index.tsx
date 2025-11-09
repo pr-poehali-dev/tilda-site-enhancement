@@ -1,35 +1,12 @@
-import { useState } from 'react';
-import Header from '@/components/Header';
-import HeroSection from '@/components/HeroSection';
-import MainSections from '@/components/MainSections';
-import Footer from '@/components/Footer';
+// Update this page (the content is just a fallback if you fail to update the page)
 
 const Index = () => {
-  const [activeSection, setActiveSection] = useState('home');
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-
-  const scrollToSection = (id: string) => {
-    setActiveSection(id);
-    setMobileMenuOpen(false);
-    const element = document.getElementById(id);
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
-    }
-  };
-
   return (
-    <div className="min-h-screen bg-white">
-      <Header
-        activeSection={activeSection}
-        mobileMenuOpen={mobileMenuOpen}
-        setMobileMenuOpen={setMobileMenuOpen}
-        scrollToSection={scrollToSection}
-      />
-      <main>
-        <HeroSection scrollToSection={scrollToSection} />
-        <MainSections />
-      </main>
-      <Footer scrollToSection={scrollToSection} />
+    <div className="min-h-screen flex items-center justify-center bg-gray-100">
+      <div className="text-center">
+        <h1 className="text-4xl font-bold mb-4 color-black text-black">Добро пожаловать!</h1>
+        <p className="text-xl text-gray-600">тут будет отображаться ваш проект</p>
+      </div>
     </div>
   );
 };
